@@ -7,36 +7,20 @@ const Home = () => (
     <Head>
       <title>Home</title>
       <link rel='icon' href='/favicon.ico' />
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet" />
     </Head>
 
     <Nav />
 
     <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className='row'>
-        <a href='https://nextjs.org/docs' className='card'>
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href='https://nextjs.org/learn' className='card'>
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href='https://github.com/zeit/next.js/tree/master/examples'
-          className='card'
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
+      <h1 className='title'>Rowan & Raven</h1>
     </div>
 
     <style jsx>{`
+      :global(body) {
+        margin: 0;
+        font-family: 'Indie Flower', cursive;;
+      }
       .hero {
         width: 100%;
         color: #333;
@@ -44,13 +28,14 @@ const Home = () => (
       .title {
         margin: 0;
         width: 100%;
-        padding-top: 80px;
+        padding-top: 10px;
         line-height: 1.15;
-        font-size: 48px;
+        font-size: 36px;
+        padding-left: 5px
       }
       .title,
       .description {
-        text-align: center;
+        text-align: left;
       }
       .row {
         max-width: 880px;
