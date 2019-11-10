@@ -1,25 +1,32 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Head from 'next/head';
+
+if (typeof window !== 'undefined') {
+    const WebFont = require('webfontloader');
+
+    WebFont.load({
+        google: {
+            families: ['Indie Flower&display=swap'],
+        },
+    });
+}
+
 
 const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel='icon' href='/favicon.ico' />
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet" />
-    </Head>
+    <div>
+        <Head>
+            <title>Home</title>
+            <link rel='icon' href='/favicon.ico'/>
+        </Head>
 
-    <Nav />
+        <div className='hero'>
+            <h1 className='title'>Rowan & Raven</h1>
+        </div>
 
-    <div className='hero'>
-      <h1 className='title'>Rowan & Raven</h1>
-    </div>
-
-    <style jsx>{`
+        <style jsx>{`
       :global(body) {
         margin: 0;
-        font-family: 'Indie Flower', cursive;;
+        font-family: 'Indie Flower', cursive;
       }
       .hero {
         width: 100%;
@@ -67,7 +74,7 @@ const Home = () => (
         color: #333;
       }
     `}</style>
-  </div>
-)
+    </div>
+);
 
-export default Home
+export default Home;
