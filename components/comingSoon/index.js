@@ -6,7 +6,7 @@ import styles from './styles.css';
 import Logo from '../logo';
 
 export default () => (
-    <div className={styles.container}>
+    <main className={styles.container}>
         <div className={styles.message}>
             <Logo className={styles.logo} alt="Rowan & Raven"/>
             <div className={styles.socialList}>
@@ -23,5 +23,5 @@ export default () => (
             </div>
             <p>Coming soon</p>
         </div>
-    </div>
+    </main>
 )
