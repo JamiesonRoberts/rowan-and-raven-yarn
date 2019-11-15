@@ -29,8 +29,10 @@ class MyApp extends App {
 
         const layout = Component.layout || (page => page);
 
+        const meta = Component.head || (() => null);
+
         return [
-            Component.head() || (() => null),
+            meta(),
             <style jsx global>{`
                 *, *::before, *::after {
                     box-sizing: border-box;

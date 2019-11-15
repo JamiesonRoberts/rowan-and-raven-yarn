@@ -21,6 +21,7 @@ export default () => (
                     <span className={styles.invisible}>Follow Rowan & Raven Yarn on Ravelry</span>
                 </a>
             </div>
+            <p>Coming soon</p>
         </div>
     </div>
 )
