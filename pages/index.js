@@ -1,14 +1,16 @@
 import React from 'react';
+
 import { layout } from '../layouts/siteLayout';
-import { head } from '../global/seoMeta';
+import { meta } from './_head';
 
-const Home = () => [
-    <div className='hero'>
-        {/*<Logo/>*/}
-    </div>,
-];
+import ComingSoon from '../components/comingSoon';
 
-Home.head = () => head({ title: 'Rowan & Raven Yarn', description: 'Testing this sucker' });
+const Home = () => (<ComingSoon/>);
+
+Home.head = () => meta(
+    <title>Rowan & Raven Yarn | Coming Soon</title>,
+    <meta name='description' content='Welcome to the home of Rowan & Raven Yarn' />
+);
 
 Home.layout = layout;
 

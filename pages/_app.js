@@ -29,10 +29,21 @@ class MyApp extends App {
 
         const layout = Component.layout || (page => page);
 
-        const meta = Component.head || (() => null);
-
         return [
-            meta(),
+            Component.head() || (() => null),
+            <style jsx global>{`
+                *, *::before, *::after {
+                    box-sizing: border-box;
+                    font-family: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif;
+                }
+                html, body {
+                    width: 100%;
+                    height: 100%;
+                }
+                body {
+                    margin: 0;
+                }
+            `}</style>,
             layout(<Component {...pageProps}/>),
         ];
     }
