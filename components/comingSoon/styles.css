@@ -1,0 +1,44 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    text-align: center;
+}
+
+.logo {
+    width: 100%;
+    max-width: 20rem;
+}
+
+.invisible {
+    position: absolute;
+    opacity: 0;
+    line-height: 0;
+    height: 0;
+    width: 0;
+    top: -999rem;
+    left: -999rem;
+    overflow: hidden;
+    cursor: none;
+    pointer-events: none;
+}
+
+.socialList {
+    display: flex;
+    justify-content: center;
+}
+
+.socialLink {
+    font-size: 2rem;
+    color: #1c1c1b;
+    display: block;
+    cursor: pointer;
+    margin: 0 0.5rem
+}

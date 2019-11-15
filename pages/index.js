@@ -1,80 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 
-if (typeof window !== 'undefined') {
-    const WebFont = require('webfontloader');
+import { layout } from '../layouts/siteLayout';
+import { meta } from '../global/_head';
 
-    WebFont.load({
-        google: {
-            families: ['Indie Flower&display=swap'],
-        },
-    });
-}
+import ComingSoon from '../components/comingSoon';
 
+const Home = () => (<ComingSoon/>);
 
-const Home = () => (
-    <div>
-        <Head>
-            <title>Home</title>
-            <link rel='icon' href='/favicon.ico'/>
-        </Head>
-
-        <div className='hero'>
-            <h1 className='title'>Rowan & Raven</h1>
-        </div>
-
-        <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: 'Indie Flower', cursive;
-      }
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 10px;
-        line-height: 1.15;
-        font-size: 36px;
-        padding-left: 5px
-      }
-      .title,
-      .description {
-        text-align: left;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-    </div>
+Home.head = () => meta(
+    <title>Rowan & Raven Yarn | Coming Soon</title>,
+    <meta name='description' content='Welcome to the home of Rowan & Raven Yarn' />
 );
+
+Home.layout = layout;
 
 export default Home;
