@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faRavelry } from '@fortawesome/free-brands-svg-icons';
 

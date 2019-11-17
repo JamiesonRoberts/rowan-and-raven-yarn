@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { layout } from '../layouts/siteLayout';
-import { meta } from '../global/_head';
+import { layout } from 'views/layouts/page';
+import { meta } from 'views/components/head';
 
-import ComingSoon from '../components/comingSoon';
+import ComingSoon from 'views/components/comingSoon';
 
 const Home = () => (<ComingSoon/>);
 

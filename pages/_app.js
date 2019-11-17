@@ -1,6 +1,8 @@
 import React from 'react';
 import App from 'next/app';
 
+import 'styles/App.css';
+
 class MyApp extends App {
     // Only uncomment this method if you have blocking data requirements for
     // every single page in your application. This disables the ability to
@@ -33,19 +35,6 @@ class MyApp extends App {
 
         return [
             meta(),
-            <style jsx global>{`
-                *, *::before, *::after {
-                    box-sizing: border-box;
-                    font-family: 'Roboto', Arial, "Helvetica Neue", Helvetica, sans-serif;
-                }
-                html, body {
-                    width: 100%;
-                    height: 100%;
-                }
-                body {
-                    margin: 0;
-                }
-            `}</style>,
             layout(<Component {...pageProps}/>),
         ];
     }
