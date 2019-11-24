@@ -1,6 +1,4 @@
-@value vars: './_variables.css';
-
-@value container-width from vars;
+@import "helpers";
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -20,7 +18,7 @@ body {
 
 :global(.container) {
     width: 100%;
-    max-width: container-width;
+    max-width: $container-width;
     margin: 0 auto;
     padding: 0 1rem;
 }

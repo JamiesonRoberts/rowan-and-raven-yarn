@@ -1,0 +1,28 @@
+/* Media Query Breakpoints */
+
+/* 600px */
+$tablet-portrait-breakpoint-below: 37.4375rem;
+$tablet-portrait-breakpoint: 37.5rem;
+
+/* 900px */
+$tablet-landscape-breakpoint-below: 56.1875rem;
+$tablet-landscape-breakpoint: 56.25rem;
+
+/* 1200px */
+$desktop-breakpoint-below: 74.9375rem;
+$desktop-breakpoint: 75rem;
+
+/* 1800px */
+$large-desktop-breakpoint-below: 112.4375rem;
+$large-desktop-breakpoint: 112.5rem;
+
+/* Container Variables */
+$container-width: 72rem;
+
+/* Spacing Variables */
+$gutter-width: 1.25rem;
+$half-gutter-width: 0.625rem;
+
+/* Transition Variables */
+$transition-quick: 0.15s ease-in-out;
+$transition: 0.3s ease-in-out;

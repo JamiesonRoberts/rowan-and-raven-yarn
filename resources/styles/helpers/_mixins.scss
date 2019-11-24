@@ -1,0 +1,50 @@
+@import "variables";
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: $tablet-portrait-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up-with-hover {
+    @media (min-width: $tablet-portrait-breakpoint) and (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: $tablet-landscape-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up-with-hover {
+    @media (min-width: $tablet-landscape-breakpoint) and (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up-with-hover {
+    @media (min-width: $desktop-breakpoint) and (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin for-large-desktop-up {
+    @media (min-width: $large-desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-large-desktop-up-with-hover {
+    @media (min-width: $large-desktop-breakpoint) and (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+

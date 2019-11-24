@@ -1,9 +1,15 @@
+@import "resources/styles/helpers";
+
 .outer {
     position: sticky;
     top: 0;
     border-bottom: 1px solid #efefef;
     height: 4rem;
     z-index: 5;
+
+    @include for-desktop-up {
+        height: 6rem
+    }
 }
 
 .container {
@@ -25,13 +31,38 @@
     max-width: 10rem;
 }
 
-.navigation {
+.navigation,
+.cart {
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 0;
-    transform: translate(-100%, 0);
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    transition: transform $transition-quick;
+
+    a {
+        color: white;
+    }
 }
+
+.navigation {
+    background-color: black;
+    transform: translate(-100%, 0);
+
+    &.navOpen {
+        transform: translate(0, 0);
+    }
+}
+
+.cart {
+    background-color: red;
+    transform: translate(100%, 0);
+
+    &.cartOpen {
+        transform: translate(0, 0);
+    }
+}
+
 
 .navIcons {
     flex: 1 1 40%;

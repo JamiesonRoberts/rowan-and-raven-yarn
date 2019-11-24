@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faRavelry } from '@fortawesome/free-brands-svg-icons';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 import Logo from '../logo';
 
 export default () => (

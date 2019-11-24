@@ -2,8 +2,8 @@
 const withPlugins = require('next-compose-plugins');
 
 const path = require('path');
-const withCSS = require('@zeit/next-css');
-const withSvgr = require('next-svgr');
+const withSCSS = require('@zeit/next-sass');
+const withSVGR = require('next-svgr');
 
 const nextConfig = {
     webpack: (config, options) => {
@@ -14,12 +14,12 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([
-    [withCSS, {
+    [withSCSS, {
         cssModules: true,
         cssLoaderOptions: {
             importLoaders: 1,
             localIdentName: '[local]___[hash:base64:5]',
         },
     }],
-    withSvgr,
+    withSVGR,
 ], nextConfig);
