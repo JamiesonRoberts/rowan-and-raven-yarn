@@ -1,15 +1,41 @@
-@value vars: 'styles/_variables.css';
-
-@value container-width from vars;
-
 .outer {
     position: sticky;
     top: 0;
+    border-bottom: 1px solid #efefef;
+    height: 4rem;
+    z-index: 5;
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem;
+}
+
+.logo {
+    max-width: 40%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logoImage {
     width: 100%;
-    max-width: container-width;
-    margin: 0 auto;
-    padding: 0 1rem;
+    height: 100%;
+    max-width: 10rem;
+}
+
+.navigation {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-100%, 0);
+}
+
+.navIcons {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
 }

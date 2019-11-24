@@ -3,9 +3,7 @@ import React from 'react';
 import { layout } from 'views/layouts/page';
 import { meta } from 'views/components/head';
 
-import ComingSoon from 'views/components/comingSoon';
-
-const Home = () => (<ComingSoon/>);
+const Home = () => (<div/>);
 
 Home.head = () => meta([
     <title key={'title'}>Rowan & Raven Yarn | Coming Soon</title>,
