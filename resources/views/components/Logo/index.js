@@ -1,9 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 
-export default ({className, alt}) => (
+import styles from './styles.scss';
+
+export default ({ className, alt = 'Rowan & Raven Yarn' }) => (
     <svg width="633.691" height="73.679" viewBox="0 0 633.691 73.679"
          xmlns="http://www.w3.org/2000/svg"
-         className={className}
+         className={
+             classNames(
+                 className,
+                 styles.logo
+             )}
     >
         <title>{alt}</title>
         <g id="svgGroup" strokeLinecap="round" fillRule="evenodd" fontSize="9pt"

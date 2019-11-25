@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faRavelry } from '@fortawesome/free-brands-svg-icons';
 
 import styles from './styles.scss';
-import Logo from '../logo';
+import Logo from '../Logo';
 
 export default () => (
     <main className={styles.container}>

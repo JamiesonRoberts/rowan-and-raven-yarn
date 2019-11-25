@@ -3,14 +3,25 @@ import Link from 'next/link';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faBars } from '@fortawesome/pro-regular-svg-icons';
+import { faBars, faShoppingCart } from '@fortawesome/pro-regular-svg-icons';
 
-import Logo from 'views/components/logo';
+import Logo from 'views/components/Logo';
 import styles from './styles.scss';
 
-export default () => {
+const DynamicLink = React.forwardRef(({ onClick, href, children, classes }, ref) => (
+    <a href={href} onClick={onClick} ref={ref} className={classes}>
+        {children}
+    </a>
+));
+
+export default ({ cart = { size: 0 } } = {}) => {
     const [canViewNav, setCanViewNav] = useState(false);
     const [canViewCart, setCanViewCart] = useState(false);
+
+    const resetTrays = () => {
+        setCanViewCart(false);
+        setCanViewNav(false);
+    };
 
     useEffect(() => {
         if (canViewNav) setCanViewCart(false);
@@ -20,26 +31,24 @@ export default () => {
         if (canViewCart) setCanViewNav(false);
     }, [canViewCart]);
 
-    const LogoLink = React.forwardRef(({ onClick, href }, ref) => (
-        <a href={href} onClick={onClick} ref={ref} className={styles.logo}>
-            <Logo className={styles.logoImage}/>
-        </a>
-    ));
-
+    // replace with fetch to shopify navigation
     const navLinks = [
-        'Home',
-        'About',
-        'Shop',
+        { name: 'Home', link: '/' },
+        { name: 'About' },
+        { name: 'Shop' },
     ];
 
     return (
-        <header className={styles.outer}>
+        <header className={classNames(
+            styles.outer,
+            { [styles.trayOpen]: canViewNav || canViewCart },
+        )}>
             <div className={classNames(
                 'container',
                 styles.container,
             )}>
                 <Link href="/">
-                    <LogoLink/>
+                    <DynamicLink onClick={resetTrays}><Logo/></DynamicLink>
                 </Link>
                 <nav
                     className={classNames(
@@ -50,7 +59,17 @@ export default () => {
                     role={'navigation'}
                 >
                     {navLinks.map((value, index) => {
-                        return <Link key={index} href={value}>{value}</Link>;
+                        const href = value.link || value.name.toLowerCase();
+                        return <Link key={index} href={href}>
+                            <DynamicLink
+                                onClick={resetTrays}
+                                key={index}
+                                ref={index}
+                                classes={styles.navItem}
+                            >
+                                {value.name}
+                            </DynamicLink>
+                        </Link>;
                     })}
                 </nav>
                 <div
@@ -67,15 +86,25 @@ export default () => {
                         aria-expanded={canViewCart}
                         aria-controls={'cart'}
                         onClick={() => setCanViewCart(!canViewCart)}
+                        className={classNames(
+                            styles.navButton,
+                            { [styles.active]: canViewCart },
+                        )}
                     >
                         <FontAwesomeIcon icon={faShoppingCart}/>
+                        <span className={'invisible'}>Cart</span>
                     </button>
                     <button
                         aria-expanded={canViewNav}
                         aria-controls={'menu'}
                         onClick={() => setCanViewNav(!canViewNav)}
+                        className={classNames(
+                            styles.navButton,
+                            { [styles.active]: canViewNav },
+                        )}
                     >
                         <FontAwesomeIcon icon={faBars}/>
+                        <span className={'invisible'}>Menu</span>
                     </button>
                 </div>
             </div>

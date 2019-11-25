@@ -23,6 +23,19 @@ $container-width: 72rem;
 $gutter-width: 1.25rem;
 $half-gutter-width: 0.625rem;
 
+$transition-quick-timing: 0.2s;
+$transition-timing: 0.35s;
 /* Transition Variables */
-$transition-quick: 0.15s ease-in-out;
-$transition: 0.3s ease-in-out;
+$transition-quick: $transition-quick-timing ease-in-out;
+$transition: $transition-timing ease-in-out;
+
+$primaryFont: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$secondaryFont: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$white: #FFFFFF;
+$black: #000000;
+
+$black10light: lighten($black, 10%);
+$black20light: lighten($black, 20%);
+$white10dark: darken($white, 10%);
+
