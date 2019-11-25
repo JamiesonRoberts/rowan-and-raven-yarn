@@ -1,4 +1,4 @@
-@import "resources/styles/helpers";
+@import "~styles/helpers";
 
 .outer {
     position: sticky;
@@ -7,9 +7,6 @@
     height: 4rem;
     z-index: 5;
 
-    @include for-desktop-up {
-        height: 6rem
-    }
 }
 
 .container {
@@ -33,12 +30,12 @@
 
 .navigation,
 .cart {
-    width: 100%;
+    width: 100vw;
     position: absolute;
-    left: 0;
     top: 4rem;
     height: calc(100vh - 4rem);
     transition: transform $transition-quick;
+    left: 0;
 
     a {
         color: white;

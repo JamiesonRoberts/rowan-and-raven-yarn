@@ -22,3 +22,7 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+:global(.invisible) {
+    @include invisible;
+}

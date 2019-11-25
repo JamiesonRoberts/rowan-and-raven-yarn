@@ -48,3 +48,13 @@
     }
 }
 
+@mixin invisible {
+    position: absolute!important;
+    top: -999rem;
+    left: -999rem;
+    line-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    cursor: none;
+    pointer-events: none;
+}

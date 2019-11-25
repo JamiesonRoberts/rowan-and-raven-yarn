@@ -3,7 +3,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faBars } from '@fortawesome/pro-regular-svg-icons';
 
 import Logo from 'views/components/logo';
 import styles from './styles.scss';
@@ -41,26 +41,41 @@ export default () => {
                 <Link href="/">
                     <LogoLink/>
                 </Link>
-                <nav className={classNames(
-                    styles.navigation,
-                    { [styles.navOpen]: canViewNav },
-                )}>
+                <nav
+                    className={classNames(
+                        styles.navigation,
+                        { [styles.navOpen]: canViewNav },
+                    )}
+                    id={'menu'}
+                    role={'navigation'}
+                >
                     {navLinks.map((value, index) => {
                         return <Link key={index} href={value}>{value}</Link>;
                     })}
                 </nav>
-                <div className={classNames(
-                    styles.cart,
-                    { [styles.cartOpen]: canViewCart },
-                )}>
+                <div
+                    id={'cart'}
+                    className={classNames(
+                        styles.cart,
+                        { [styles.cartOpen]: canViewCart },
+                    )}
+                >
                     Cart!
                 </div>
                 <div className={styles.navIcons}>
-                    <div onClick={() => setCanViewCart(!canViewCart)}>
+                    <button
+                        aria-expanded={canViewCart}
+                        aria-controls={'cart'}
+                        onClick={() => setCanViewCart(!canViewCart)}
+                    >
                         <FontAwesomeIcon icon={faShoppingCart}/>
-                    </div>
-                    <button onClick={() => setCanViewNav(!canViewNav)}>
-                        Menu
+                    </button>
+                    <button
+                        aria-expanded={canViewNav}
+                        aria-controls={'menu'}
+                        onClick={() => setCanViewNav(!canViewNav)}
+                    >
+                        <FontAwesomeIcon icon={faBars}/>
                     </button>
                 </div>
             </div>
