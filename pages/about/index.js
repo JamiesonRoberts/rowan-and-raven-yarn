@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { layout } from 'views/layouts/page';
-import { meta } from 'views/components/head';
+import { meta } from 'views/components/Head';
 
 const About = () => (<div>About Rowan & Raven Yarn</div>);
 

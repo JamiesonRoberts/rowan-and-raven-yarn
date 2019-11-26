@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from 'views/components/Header';
-import Footer from 'views/components/_footer';
+import Footer from 'views/components/Footer';
 
 const SiteLayout = ({ children }) => [
     <Header key={'header'}/>,

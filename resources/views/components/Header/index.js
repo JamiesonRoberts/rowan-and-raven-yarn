@@ -5,16 +5,48 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart } from '@fortawesome/pro-regular-svg-icons';
 
+import DynamicLink from 'views/components/DynamicLink';
 import Logo from 'views/components/Logo';
+import Cart from './Cart';
 import styles from './styles.scss';
 
-const DynamicLink = React.forwardRef(({ onClick, href, children, classes }, ref) => (
-    <a href={href} onClick={onClick} ref={ref} className={classes}>
-        {children}
-    </a>
-));
+const navLinks = [
+    { name: 'Home', link: '/' },
+    { name: 'About' },
+    { name: 'Shop' },
+];
 
-export default ({ cart = { size: 0 } } = {}) => {
+
+const NavigationItems = ({ elements, callback, classes }) => {
+    return elements.map((value, index) => {
+        const href = value.link || value.name.toLowerCase();
+        return <Link key={index} href={href}>
+            <DynamicLink
+                key={index}
+                ref={index}
+                classes={classNames(classes)}
+                onClick={callback}
+            >
+                {value.name}
+            </DynamicLink>
+        </Link>;
+    });
+};
+
+const Navigation = ({ children, canViewNav }) => (
+    <nav
+        className={classNames(
+            styles.navigation,
+            { [styles.navOpen]: canViewNav },
+        )}
+        id={'menu'}
+        role={'navigation'}
+    >
+        {children}
+    </nav>
+);
+
+export default () => {
     const [canViewNav, setCanViewNav] = useState(false);
     const [canViewCart, setCanViewCart] = useState(false);
 
@@ -31,13 +63,6 @@ export default ({ cart = { size: 0 } } = {}) => {
         if (canViewCart) setCanViewNav(false);
     }, [canViewCart]);
 
-    // replace with fetch to shopify navigation
-    const navLinks = [
-        { name: 'Home', link: '/' },
-        { name: 'About' },
-        { name: 'Shop' },
-    ];
-
     return (
         <header className={classNames(
             styles.outer,
@@ -50,37 +75,10 @@ export default ({ cart = { size: 0 } } = {}) => {
                 <Link href="/">
                     <DynamicLink onClick={resetTrays}><Logo/></DynamicLink>
                 </Link>
-                <nav
-                    className={classNames(
-                        styles.navigation,
-                        { [styles.navOpen]: canViewNav },
-                    )}
-                    id={'menu'}
-                    role={'navigation'}
-                >
-                    {navLinks.map((value, index) => {
-                        const href = value.link || value.name.toLowerCase();
-                        return <Link key={index} href={href}>
-                            <DynamicLink
-                                onClick={resetTrays}
-                                key={index}
-                                ref={index}
-                                classes={styles.navItem}
-                            >
-                                {value.name}
-                            </DynamicLink>
-                        </Link>;
-                    })}
+                <nav>
+                    main desktop nav goes here <br/>
+                    no ssr component
                 </nav>
-                <div
-                    id={'cart'}
-                    className={classNames(
-                        styles.cart,
-                        { [styles.cartOpen]: canViewCart },
-                    )}
-                >
-                    Cart!
-                </div>
                 <div className={styles.navIcons}>
                     <button
                         aria-expanded={canViewCart}
@@ -107,6 +105,19 @@ export default ({ cart = { size: 0 } } = {}) => {
                         <span className={'invisible'}>Menu</span>
                     </button>
                 </div>
+            </div>
+            <div>
+                mobile nav <br/>
+                no ssr component
+
+            </div>
+            <Cart canViewCart={canViewCart} />
+            <div>
+                <Navigation canViewNav={canViewNav}>
+                    <NavigationItems elements={navLinks} classes={styles.navItem}
+                                     callback={resetTrays}/>
+                </Navigation>
+
             </div>
         </header>
     );
