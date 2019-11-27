@@ -111,7 +111,7 @@ export default () => {
                 no ssr component
 
             </div>
-            <Cart canViewCart={canViewCart} />
+            <Cart canViewCart={canViewCart} callback={state => setCanViewCart(state)}/>
             <div>
                 <Navigation canViewNav={canViewNav}>
                     <NavigationItems elements={navLinks} classes={styles.navItem}
