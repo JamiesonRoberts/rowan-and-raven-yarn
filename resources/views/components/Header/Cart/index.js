@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.scss';
 
-export default ({ canViewCart, callback }) => {
+export default ({ canViewCart, id, callback }) => {
 
     const handleInteraction = () => {
         callback(false)
@@ -20,12 +20,18 @@ export default ({ canViewCart, callback }) => {
                 styles.cartContainer,
             )}>
             <div
-                id={'cart'}
+                id={id}
                 className={styles.cart}
             >
                 Cart!
 
-                <button onClick={handleInteraction}>&times;</button>
+                <button
+                    onClick={handleInteraction}
+                    aria-expanded={canViewCart}
+                    aria-controls={id}
+                >
+                    &times;
+                </button>
             </div>
         </div>
     </div>);

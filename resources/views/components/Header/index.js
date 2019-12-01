@@ -8,43 +8,8 @@ import { faBars, faShoppingCart } from '@fortawesome/pro-regular-svg-icons';
 import DynamicLink from 'views/components/DynamicLink';
 import Logo from 'views/components/Logo';
 import Cart from './Cart';
+import Navigation from './Navigation';
 import styles from './styles.scss';
-
-const navLinks = [
-    { name: 'Home', link: '/' },
-    { name: 'About' },
-    { name: 'Shop' },
-];
-
-
-const NavigationItems = ({ elements, callback, classes }) => {
-    return elements.map((value, index) => {
-        const href = value.link || value.name.toLowerCase();
-        return <Link key={index} href={href}>
-            <DynamicLink
-                key={index}
-                ref={index}
-                classes={classNames(classes)}
-                onClick={callback}
-            >
-                {value.name}
-            </DynamicLink>
-        </Link>;
-    });
-};
-
-const Navigation = ({ children, canViewNav }) => (
-    <nav
-        className={classNames(
-            styles.navigation,
-            { [styles.navOpen]: canViewNav },
-        )}
-        id={'menu'}
-        role={'navigation'}
-    >
-        {children}
-    </nav>
-);
 
 export default () => {
     const [canViewNav, setCanViewNav] = useState(false);
@@ -106,19 +71,8 @@ export default () => {
                     </button>
                 </div>
             </div>
-            <div>
-                mobile nav <br/>
-                no ssr component
-
-            </div>
-            <Cart canViewCart={canViewCart} callback={state => setCanViewCart(state)}/>
-            <div>
-                <Navigation canViewNav={canViewNav}>
-                    <NavigationItems elements={navLinks} classes={styles.navItem}
-                                     callback={resetTrays}/>
-                </Navigation>
-
-            </div>
+            <Cart canViewCart={canViewCart} id={'cart'} callback={state => setCanViewCart(state)}/>
+            <Navigation canViewNav={canViewNav} id={'menu'} callback={state => setCanViewNav(state)}/>
         </header>
     );
 }

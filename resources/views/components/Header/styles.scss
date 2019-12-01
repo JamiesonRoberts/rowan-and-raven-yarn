@@ -74,38 +74,7 @@
     }
 }
 
-.navItem {
-    color: $white;
-    display: block;
-    cursor: pointer;
-    font-family: $secondaryFont;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1.125rem;
-    margin: 0.5rem 0;
-    padding: 0.5rem 0;
-    position: relative;
 
-    &::after {
-        content: '';
-        background-color: $white;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform $transition $transition-quick-timing;
-    }
-
-    &:hover, &:focus {
-        &::after {
-            transform: scaleX(1);
-            transition: transform $transition;
-        }
-    }
-}
 
 .navIcons {
     flex: 0 1 auto;
