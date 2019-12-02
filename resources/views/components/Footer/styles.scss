@@ -4,3 +4,55 @@
     background-color: $brown;
     color: $white;
 }
+
+.mainFooter {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-tablet-landscape-up {
+        flex-direction: row;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 105vw;
+        height: 1px;
+        content: '';
+        display: block;
+        background-color: rgba($white, 0.5);
+    }
+}
+
+.footerLogo {
+    margin-bottom: 1rem;
+
+    @include for-tablet-landscape-up {
+        margin-bottom: 0;
+    }
+}
+
+.copyrightMessage, .legalLinks {
+    margin-top: 1rem;
+
+    @include for-tablet-landscape-up {
+        margin-top: 0;
+    }
+}
+
+.policyLink {
+    color: $white;
+
+    &:not(:first-child) {
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+        border-left: 1px solid $white;
+    }
+}

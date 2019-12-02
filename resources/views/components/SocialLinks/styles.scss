@@ -1,0 +1,14 @@
+@import "~styles/helpers";
+
+.socialList {
+    display: flex;
+    justify-content: center;
+}
+
+.socialLink {
+    font-size: 2rem;
+    color: $white;
+    display: block;
+    cursor: pointer;
+    margin: 0 0.5rem
+}
