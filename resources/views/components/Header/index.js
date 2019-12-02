@@ -7,8 +7,9 @@ import { faBars, faShoppingCart } from '@fortawesome/pro-regular-svg-icons';
 
 import DynamicLink from 'views/components/DynamicLink';
 import Logo from 'views/components/Logo';
-import Cart from './Cart';
-import Navigation from './Navigation';
+import Cart from 'views/components/Header/Cart';
+import Navigation from 'views/components/Header/Navigation';
+
 import styles from './styles.scss';
 
 export default () => {
@@ -40,10 +41,6 @@ export default () => {
                 <Link href="/">
                     <DynamicLink onClick={resetTrays}><Logo/></DynamicLink>
                 </Link>
-                <nav>
-                    main desktop nav goes here <br/>
-                    no ssr component
-                </nav>
                 <div className={styles.navIcons}>
                     <button
                         aria-expanded={canViewCart}

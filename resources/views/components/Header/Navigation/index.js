@@ -1,38 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
+
+import NavigationItems from 'views/components/Header/NavigationItems';
+import TrayButton from 'views/components/Header/TrayButton';
+
 import styles from './styles.scss';
-import DynamicLink from 'views/components/DynamicLink';
-import Link from 'next/link';
 
-const navLinks = [
-    { name: 'Home', link: '/' },
-    { name: 'About' },
-    { name: 'Shop' },
-];
-
-const NavigationItems = ({ elements, callback, classes }) => {
-    return elements.map((value, index) => {
-        const href = value.link || value.name.toLowerCase();
-        return <Link key={index} href={href}>
-            <DynamicLink
-                key={index}
-                ref={index}
-                classes={classNames(classes)}
-                onClick={callback}
-            >
-                {value.name}
-            </DynamicLink>
-        </Link>;
-    });
-};
-
-export default ({ canViewNav, id, callback }) => {
-
-    const handleInteraction = () => {
-        callback(false)
-    };
-
-    return (<div className={
+export default ({ canViewNav, id, callback }) => (
+    <div className={
         classNames(
             styles.navDrawer,
             { [styles.navOpen]: canViewNav },
@@ -49,24 +24,14 @@ export default ({ canViewNav, id, callback }) => {
             >
 
                 <nav
-                    className={classNames(
-                        styles.navigation
-                    )}
                     id={id}
                     role={'navigation'}
                 >
-                    <button
-                        onClick={handleInteraction}
-                        aria-expanded={canViewNav}
-                        aria-controls={id}
-                    >
-                        &times;
-                    </button>
-                    <NavigationItems elements={navLinks} classes={styles.navItem}
-                                     callback={handleInteraction}/>
+                    <TrayButton id={id} active={canViewNav} callback={callback}/>
+                    <NavigationItems callback={callback}/>
                 </nav>
-
             </div>
         </div>
-    </div>);
-};
+    </div>
+)
+

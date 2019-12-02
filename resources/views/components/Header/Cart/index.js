@@ -1,14 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.scss';
+import TrayButton from 'views/components/Header/TrayButton';
 
-export default ({ canViewCart, id, callback }) => {
-
-    const handleInteraction = () => {
-        callback(false)
-    };
-
-    return (<div className={
+export default ({ canViewCart, id, callback }) => (
+    <div className={
         classNames(
             styles.cartDrawer,
             { [styles.cartOpen]: canViewCart },
@@ -23,16 +19,8 @@ export default ({ canViewCart, id, callback }) => {
                 id={id}
                 className={styles.cart}
             >
-                Cart!
-
-                <button
-                    onClick={handleInteraction}
-                    aria-expanded={canViewCart}
-                    aria-controls={id}
-                >
-                    &times;
-                </button>
+                <TrayButton id={id} active={canViewCart} callback={callback}/>
             </div>
         </div>
-    </div>);
-};
+    </div>
+)

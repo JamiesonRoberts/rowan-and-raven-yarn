@@ -45,37 +45,6 @@
     cursor: pointer;
 }
 
-
-
-.navigation {
-    width: calc(100vw - 0.5rem);
-    max-width: 20rem;
-    display: flex;
-    display: none;
-    transition: transform $transition-quick;
-    z-index: 2;
-    right: 0;
-
-    flex-direction: column;
-    padding: 1.125rem 1.625rem 6rem;
-
-
-    &.navOpen,
-    &.cartOpen {
-        transform: translate(0, 0);
-    }
-}
-
-.navigation {
-    background-color: $black10light;
-    transform: translate(100%, 0);
-    &.navOpen {
-        transition: transform $transition-quick $transition-quick-timing;
-    }
-}
-
-
-
 .navIcons {
     flex: 0 1 auto;
     max-width: 50%;
@@ -94,6 +63,7 @@
     margin: 0 0.25rem;
     padding: 0 0.25rem;
     font-size: 1rem;
+    cursor: pointer;
 
     &:hover, &.active {
         background-color: darken($white, 10%);

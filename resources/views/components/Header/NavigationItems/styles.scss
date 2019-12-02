@@ -1,0 +1,40 @@
+@import "~styles/helpers";
+
+.navItem {
+    color: $black;
+    display: block;
+    cursor: pointer;
+    font-family: $secondaryFont;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.125rem;
+    margin: 0.5rem 0 0.5rem -0.25rem;
+    padding: 0.5rem 0;
+    position: relative;
+
+    &::before {
+        content: '>';
+        padding-right: 0.5rem;
+        opacity: 0;
+        transition: opacity $transition-quick;
+    }
+
+    &::after {
+        content: '<';
+        padding-left: 0.5rem;
+        opacity: 0;
+        transition: opacity $transition-quick;
+    }
+
+    &.current {
+        &::before {
+            opacity: 0.5;
+        }
+    }
+
+    &:hover, &:focus {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
