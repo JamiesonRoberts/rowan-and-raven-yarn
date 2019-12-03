@@ -12,9 +12,7 @@ const SiteLayout = ({ children }) => [
             key={'main'}
             className={styles.main}
         >
-            <div className={'container'}>
-                {children}
-            </div>
+            {children}
         </main>
         <Footer key={'footer'}/>
     </div>,

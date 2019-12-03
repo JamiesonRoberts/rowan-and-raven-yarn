@@ -32,10 +32,10 @@
 }
 
 .container {
+    @include container($padding: 0.5rem 1rem);
     display: flex;
     justify-content: space-between;
     height: 100%;
-    padding: 0.5rem 1rem;
     position: relative;
 }
 

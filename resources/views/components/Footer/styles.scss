@@ -5,10 +5,9 @@
     color: $white;
 }
 
-.mainFooter {
+.container {
+    @include container($padding: 2rem 1rem);
     position: relative;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

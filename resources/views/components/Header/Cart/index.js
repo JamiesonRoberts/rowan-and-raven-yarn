@@ -1,7 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './styles.scss';
+
 import TrayButton from 'views/components/Header/TrayButton';
+
+import styles from './styles.scss';
 
 export default ({ canViewCart, id, callback }) => (
     <div className={
@@ -10,11 +12,7 @@ export default ({ canViewCart, id, callback }) => (
             { [styles.cartOpen]: canViewCart },
         )
     }>
-        <div className={
-            classNames(
-                'container',
-                styles.cartContainer,
-            )}>
+        <div className={styles.container}>
             <div
                 id={id}
                 className={styles.cart}

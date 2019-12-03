@@ -13,11 +13,7 @@ export default ({ canViewNav, id, callback }) => (
             { [styles.navOpen]: canViewNav },
         )
     }>
-        <div className={
-            classNames(
-                'container',
-                styles.navContainer,
-            )}>
+        <div className={styles.container}>
             <div
                 id={id}
                 className={styles.navigation}

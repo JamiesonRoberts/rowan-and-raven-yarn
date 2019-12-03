@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import classNames from 'classnames';
 
 import SocialLinks from 'views/components/SocialLinks';
 
@@ -10,10 +9,7 @@ import Logo from 'views/components/Logo';
 
 export default () => (
     <footer className={styles.footer}>
-        <div className={classNames(
-            'container',
-            styles.mainFooter,
-        )}>
+        <div className={styles.container}>
             <Link href="/">
                 <DynamicLink classes={styles.footerLogo}><Logo fill={'#FFF'}/></DynamicLink>
             </Link>

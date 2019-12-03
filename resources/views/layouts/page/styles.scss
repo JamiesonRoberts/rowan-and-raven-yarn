@@ -8,5 +8,5 @@
 }
 
 .main {
-    padding: 2rem 0;
+    @include container($padding: 2rem 1rem);
 }

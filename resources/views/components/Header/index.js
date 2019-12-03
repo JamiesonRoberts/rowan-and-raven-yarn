@@ -34,10 +34,7 @@ export default () => {
             styles.outer,
             { [styles.trayOpen]: canViewNav || canViewCart },
         )}>
-            <div className={classNames(
-                'container',
-                styles.container,
-            )}>
+            <div className={styles.container}>
                 <Link href="/">
                     <DynamicLink onClick={resetTrays}><Logo/></DynamicLink>
                 </Link>
@@ -69,7 +66,8 @@ export default () => {
                 </div>
             </div>
             <Cart canViewCart={canViewCart} id={'cart'} callback={state => setCanViewCart(state)}/>
-            <Navigation canViewNav={canViewNav} id={'menu'} callback={state => setCanViewNav(state)}/>
+            <Navigation canViewNav={canViewNav} id={'menu'}
+                        callback={state => setCanViewNav(state)}/>
         </header>
     );
 }

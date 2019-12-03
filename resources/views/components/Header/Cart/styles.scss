@@ -15,7 +15,8 @@
     }
 }
 
-.cartContainer {
+.container {
+    @include container;
     height: 100%;
 }
 

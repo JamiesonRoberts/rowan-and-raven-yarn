@@ -15,7 +15,8 @@
     }
 }
 
-.navContainer {
+.container {
+    @include container;
     height: 100%;
 }
 

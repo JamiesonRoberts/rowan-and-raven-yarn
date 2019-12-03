@@ -58,3 +58,10 @@
     cursor: none;
     pointer-events: none;
 }
+
+@mixin container($padding: 0 1rem, $margin: 0 auto) {
+    width: 100%;
+    max-width: $container-width;
+    margin: $margin;
+    padding: $padding;
+}
