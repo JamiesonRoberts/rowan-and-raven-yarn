@@ -42,3 +42,7 @@
     cursor: pointer;
     margin: 0 0.5rem
 }
+
+p a {
+    color: #000;
+}
