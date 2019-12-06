@@ -26,7 +26,7 @@ export default () => (
                     <span className={styles.invisible}>Email Rowan & Raven Yarn</span>
                 </a>
             </div>
-            <p>Coming soon</p>
+            <p>Every colour has a story.</p>
             <p><a href="mailto:info@rowanandravenyarn.ca">info@rowanandravenyarn.ca</a></p>
         </div>
     </main>
