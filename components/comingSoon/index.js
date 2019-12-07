@@ -5,6 +5,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import styles from './styles.css';
 import Logo from '../logo';
+import Tagline from '../Tagline';
 
 export default () => (
     <main className={styles.container}>
@@ -26,7 +27,7 @@ export default () => (
                     <span className={styles.invisible}>Email Rowan & Raven Yarn</span>
                 </a>
             </div>
-            <p>Every colour has a story.</p>
+            <Tagline className={styles.tagLine} />
             <p><a href="mailto:info@rowanandravenyarn.ca">info@rowanandravenyarn.ca</a></p>
         </div>
     </main>

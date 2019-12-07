@@ -17,6 +17,11 @@
     max-width: 20rem;
 }
 
+.tagLine {
+    height: 1.5rem;
+    margin-top: 1rem;
+}
+
 .invisible {
     position: absolute;
     opacity: 0;
