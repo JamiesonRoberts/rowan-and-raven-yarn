@@ -1,5 +1,17 @@
 import React from 'react';
+import Router from 'next/router';
 import App from 'next/app';
+
+const trackPageView = (url) => {
+    try {
+        window.gtag('config', 'UA-154678171-1', {
+            page_location: url,
+        });
+    } catch (error) {
+        // silences the error in dev mode
+        // and/or if gtag fails to load
+    }
+};
 
 class MyApp extends App {
     // Only uncomment this method if you have blocking data requirements for
@@ -13,6 +25,12 @@ class MyApp extends App {
     //
     //   return { ...appProps }
     // }
+
+    componentDidMount() {
+        Router.onRouteChangeComplete = url => {
+            trackPageView(url);
+        };
+    }
 
     render() {
         if (typeof window !== 'undefined') {
