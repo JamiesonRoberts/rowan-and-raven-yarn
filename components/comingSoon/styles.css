@@ -51,3 +51,18 @@
 p a {
     color: #000;
 }
+
+.shopNow {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1rem auto 0.5rem;
+    display: inline-block;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.shopNow:hover {
+    background-color: #2c2c2b;
+}
