@@ -28,7 +28,7 @@ export default () => (
                 </a>
             </div>
             <Tagline className={styles.tagLine} />
-            <div><a href="https://shop.rowanandravenyarn.ca/" className={styles.shopNow}>Shop Now</a></div>
+            <div><a href="https://shop.rowanandravenyarn.ca/collections/all" className={styles.shopNow}>Shop Now</a></div>
             <p><a href="mailto:info@rowanandravenyarn.ca">info@rowanandravenyarn.ca</a></p>
         </div>
     </main>
