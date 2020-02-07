@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faRavelry } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faRavelry, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import styles from './styles.css';
@@ -16,6 +16,11 @@ export default () => (
                    target="_blank" className={styles.socialLink}>
                     <FontAwesomeIcon icon={faInstagram}/>
                     <span className={styles.invisible}>Follow Rowan & Raven Yarn on Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/rowanandravenyarn" rel="noopener" target="_blank"
+                   className={styles.socialLink}>
+                    <FontAwesomeIcon icon={faFacebookF}/>
+                    <span className={styles.invisible}>Follow Rowan & Raven Yarn on Facebook</span>
                 </a>
                 <a href="https://www.ravelry.com/people/Rustierose" rel="noopener" target="_blank"
                    className={styles.socialLink}>
