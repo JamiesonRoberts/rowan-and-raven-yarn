@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({ className, alt = 'Every colour has a story'}) => (
-    <svg width="758.45" height="88.828" viewBox="0 0 758.45 88.828"
+    <svg viewBox="0 0 1086 127" width="1086" height="127"
          xmlns="http://www.w3.org/2000/svg"
          className={className}
     >
