@@ -2,7 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import PlausibleProvider from 'next-plausible'
 
-import '../components/styles.css'
+import '../styles/styles.css'
 
 class MyApp extends App {
     render() {
@@ -11,7 +11,7 @@ class MyApp extends App {
 
             WebFont.load({
                 google: {
-                    families: ['Raleway:400', 'Roboto:400&display=swap'],
+                    families: ['Raleway:700', 'Roboto:400&display=swap'],
                 },
                 active: () => {
                     sessionStorage.fontsLoaded = true
@@ -21,7 +21,7 @@ class MyApp extends App {
 
         const { Component, pageProps } = this.props
         return (
-            <PlausibleProvider domain="rowanandravenyarn.ca">
+            <PlausibleProvider domain="rowanandravenyarn.ca" trackOutboundLinks={true}>
                 <Component {...pageProps} />
             </PlausibleProvider>
         )

@@ -1,14 +1,15 @@
 import React from 'react';
-
-import Logo from "../components/Logo";
+import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebookF,
     faInstagram,
-    faRavelry
+    faRavelry,
 } from "@fortawesome/free-brands-svg-icons";
-import Tagline from "../components/Tagline";
-import Head from "next/head";
+import { faTree } from "@fortawesome/free-solid-svg-icons";
+
+import Logo from "../components/Logo";
+import styles from "../styles/pages/Index.module.css";
 
 const Index = () => (
     <>
@@ -38,28 +39,46 @@ const Index = () => (
                   content="/metaImage.jpg"/>
         </Head>
         <main>
-            <div>
-                <Logo alt="Rowan & Raven Yarn"/>
+            <div className={styles.layout}>
+                <Logo alt="Rowan & Raven Yarn" className={styles.logo}/>
                 <div>
-                    <a href="https://www.instagram.com/rowanandravenyarn/"
-                       rel="noopener"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faInstagram}/>
-                        <span>Follow Rowan & Raven Yarn on Instagram</span>
-                    </a>
-                    <a href="https://www.facebook.com/rowanandravenyarn"
-                       rel="noopener" target="_blank">
-                        <FontAwesomeIcon icon={faFacebookF}/>
-                        <span>Follow Rowan & Raven Yarn on Facebook</span>
-                    </a>
-                    <a href="https://www.ravelry.com/people/Rustierose"
-                       rel="noopener" target="_blank"
-                    >
-                        <FontAwesomeIcon icon={faRavelry}/>
-                        <span>Follow Rowan & Raven Yarn on Ravelry</span>
-                    </a>
+                    <h1 className={styles.title}>Rowan &amp; Raven Yarn is now
+                        closed indefinitely.</h1>
+                    <p>Nadia may be around on Instagram from time to time by
+                        that name if you’d like to stay in touch :) So long and
+                        thanks for all the fish!</p>
+                    <p>~Nadia, founder and owner of Rowan & Raven Yarn</p>
+                    <div className={styles.linkList}>
+                        <a href="https://www.instagram.com/rowanandravenyarn/"
+                           rel="noopener"
+                           target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faInstagram}/>
+                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/rowanandravenyarn"
+                           rel="noopener"
+                           target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faFacebookF}/>
+                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Facebook</span>
+                        </a>
+                        <a href="https://www.ravelry.com/people/Rustierose"
+                           rel="noopener"
+                           target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faRavelry}/>
+                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Ravelry</span>
+                        </a>
+                        <a href="https://linktr.ee/Rowanandravenyarn"
+                           rel="noopener"
+                           target="_blank"
+                        >
+                            <FontAwesomeIcon icon={faTree}/>
+                            <span className={styles.invisible}>Visit Rowan and Raven Yarn on Linktr.ee</span>
+                        </a>
+                    </div>
                 </div>
-                <Tagline/>
             </div>
         </main>
     </>
