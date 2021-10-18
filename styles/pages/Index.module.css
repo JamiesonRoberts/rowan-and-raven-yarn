@@ -11,18 +11,31 @@
 }
 
 .logo {
-    max-width: 100%;
+    max-width: 12rem;
+    height: auto;
+}
+
+@media (min-width: 37.5rem) {
+    .logo {
+        max-width: 100%;
+    }
 }
 
 .title {
     font-family: Raleway,sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 1.25;
     text-transform: none;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 37.5rem) {
+    .title {
+        font-size: 2.5rem;
+    }
 }
 
 .invisible {
@@ -40,7 +53,7 @@
 
 .linkList a {
     font-size: 1.5rem;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
     color: #000000;
 }
 
