@@ -1,7 +1,6 @@
 // next.config.js
 const withPlugins = require('next-compose-plugins');
 
-const withSvgr = require("next-svgr");
 const { withPlausibleProxy } = require("next-plausible");
 
 const nextConfig = {
@@ -27,7 +26,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([
-    withSvgr,
     withPlausibleProxy({
         subdirectory: 'analytics'
     })
