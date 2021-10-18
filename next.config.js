@@ -1,16 +1,12 @@
 // next.config.js
 const withPlugins = require('next-compose-plugins');
 
-const withCSS = require('@zeit/next-css');
 const withSvgr = require("next-svgr");
+const { withPlausibleProxy } = require("next-plausible");
 
 module.exports = withPlugins([
-    [withCSS, {
-        cssModules: true,
-        cssLoaderOptions: {
-            importLoaders: 1,
-            localIdentName: '[local]___[hash:base64:5]',
-        },
-    }],
     withSvgr,
+    withPlausibleProxy({
+        subdirectory: 'analytics'
+    })
 ]);

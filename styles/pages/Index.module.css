@@ -1,0 +1,49 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.logo {
+    max-width: 100%;
+}
+
+.title {
+    font-family: Raleway,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    line-height: 1.25;
+    text-transform: none;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+}
+
+.invisible {
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+.linkList {
+    display: flex;
+    justify-content: center;
+}
+
+.linkList a {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    color: #000000;
+}
+
+.linkList a:hover, .linkList a:focus {
+    color: #9b6496
+}
