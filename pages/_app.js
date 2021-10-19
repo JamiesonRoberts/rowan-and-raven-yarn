@@ -3,6 +3,7 @@ import App from 'next/app'
 import PlausibleProvider from 'next-plausible'
 
 import '../styles/styles.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 class MyApp extends App {
     render() {
