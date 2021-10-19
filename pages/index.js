@@ -14,6 +14,8 @@ import styles from "../styles/pages/Index.module.css";
 const Index = () => (
     <>
         <Head>
+            <meta key={'viewport'} name="viewport"
+                  content="width=device-width, initial-scale=1"/>
             <title key={'title'}>Rowan & Raven Yarn | Every colour has a
                 story</title>,
             <meta name="description"
@@ -21,13 +23,14 @@ const Index = () => (
             <meta name="title"
                   content="Rowan & Raven Yarn | Every colour has a story"/>,
             <meta property="og:type" content="website"/>,
-            <meta property="og:url" content="https://rowanandravenyarn.ca"/>,
+            <meta property="og:url"
+                  content="https://rowanandravenyarn.ca"/>,
             <meta property="og:title"
                   content="Rowan & Raven Yarn | Every colour has a story"/>,
             <meta property="og:description"
                   content="Hand dyed yarn from London, Ontario, Canada."/>,
             <meta property="og:image"
-                  content="/metaImage.jpg"/>,
+                  content="https://rowanandravenyarn.ca/meta.jpg"/>,
             <meta property="twitter:card" content="summary_large_image"/>,
             <meta property="twitter:url"
                   content="https://rowanandravenyarn.ca"/>,
@@ -36,7 +39,23 @@ const Index = () => (
             <meta property="twitter:description"
                   content="Hand dyed yarn from London, Ontario, Canada."/>,
             <meta property="twitter:image"
-                  content="/metaImage.jpg"/>
+                  content="https://rowanandravenyarn.ca/meta.jpg"/>
+            <link key={'apple-touch-icon'} rel="apple-touch-icon"
+                  sizes="180x180"
+                  href="/apple-touch-icon.png"/>
+            <link key={'icon-32'} rel="icon" type="image/png" sizes="32x32"
+                  href="/favicon-32x32.png"/>
+            <link key={'icon-16'} rel="icon" type="image/png" sizes="16x16"
+                  href="/favicon-16x16.png"/>
+            <link key={'manifest'} rel="manifest" href="/site.webmanifest"/>
+            <link key={'mask-iocn'} rel="mask-icon"
+                  href="/safari-pinned-tab.svg"
+                  color="#000000"/>
+            <meta name="msapplication-TileColor"
+                  content="#da532c"/>
+            <meta name="theme-color" content="#ffffff"/>
+            <link key={'canonical'} rel="canonical"
+                  href="https://rowanandravenyarn.ca"/>
         </Head>
         <main>
             <div className={styles.layout}>
