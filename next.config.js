@@ -15,6 +15,11 @@ const nextConfig = {
     async redirects() {
         return [
             {
+                source: '/password',
+                destination: '/', // Matched parameters can be used in the destination
+                permanent: true,
+            },
+            {
                 source: '/products/:slug*',
                 destination: '/', // Matched parameters can be used in the destination
                 permanent: true,
