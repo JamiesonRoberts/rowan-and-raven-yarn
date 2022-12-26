@@ -57,49 +57,47 @@ const Index = () => (
             <link key={'canonical'} rel="canonical"
                   href="https://rowanandravenyarn.ca"/>
         </Head>
-        <main>
-            <div className={styles.layout}>
-                <Logo alt="Rowan & Raven Yarn" className={styles.logo}/>
-                <div>
-                    <h1 className={styles.title}>Rowan &amp; Raven Yarn is now
-                        closed indefinitely.</h1>
-                    <p>Nadia may be around on Instagram from time to time by
-                        that name if you’d like to stay in touch :) So long and
-                        thanks for all the fish!</p>
-                    <p>~Nadia, founder and owner of Rowan & Raven Yarn</p>
-                    <div className={styles.linkList}>
-                        <a href="https://www.instagram.com/rowanandravenyarn/"
-                           rel="noopener"
-                           target="_blank"
-                        >
-                            <FontAwesomeIcon icon={faInstagram}/>
-                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/rowanandravenyarn"
-                           rel="noopener"
-                           target="_blank"
-                        >
-                            <FontAwesomeIcon icon={faFacebookF}/>
-                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Facebook</span>
-                        </a>
-                        <a href="https://www.ravelry.com/people/Rustierose"
-                           rel="noopener"
-                           target="_blank"
-                        >
-                            <FontAwesomeIcon icon={faRavelry}/>
-                            <span className={styles.invisible}>Visit Rowan & Raven Yarn on Ravelry</span>
-                        </a>
-                        <a href="https://linktr.ee/Rowanandravenyarn"
-                           rel="noopener"
-                           target="_blank"
-                        >
-                            <FontAwesomeIcon icon={faTree}/>
-                            <span className={styles.invisible}>Visit Rowan and Raven Yarn on Linktr.ee</span>
-                        </a>
-                    </div>
+        <div className={styles.layout}>
+            <Logo alt="Rowan & Raven Yarn" className={styles.logo}/>
+            <div>
+                <h1 className={styles.title}>Rowan &amp; Raven Yarn is now
+                    closed indefinitely.</h1>
+                <p>Nadia may be around on Instagram from time to time by
+                    that name if you’d like to stay in touch :) So long and
+                    thanks for all the fish!</p>
+                <p>~Nadia, founder and owner of Rowan & Raven Yarn</p>
+                <div className={styles.linkList}>
+                    <a href="https://www.instagram.com/rowanandravenyarn/"
+                       rel="noopener"
+                       target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faInstagram}/>
+                        <span className={styles.invisible}>Visit Rowan & Raven Yarn on Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/rowanandravenyarn"
+                       rel="noopener"
+                       target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faFacebookF}/>
+                        <span className={styles.invisible}>Visit Rowan & Raven Yarn on Facebook</span>
+                    </a>
+                    <a href="https://www.ravelry.com/people/Rustierose"
+                       rel="noopener"
+                       target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faRavelry}/>
+                        <span className={styles.invisible}>Visit Rowan & Raven Yarn on Ravelry</span>
+                    </a>
+                    <a href="https://linktr.ee/Rowanandravenyarn"
+                       rel="noopener"
+                       target="_blank"
+                    >
+                        <FontAwesomeIcon icon={faTree}/>
+                        <span className={styles.invisible}>Visit Rowan and Raven Yarn on Linktr.ee</span>
+                    </a>
                 </div>
             </div>
-        </main>
+        </div>
     </>
 );
 
