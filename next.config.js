@@ -1,16 +1,26 @@
-// next.config.js
-const withPlugins = require('next-compose-plugins');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withPlausibleProxy } = require('next-plausible');
 
-const { withPlausibleProxy } = require("next-plausible");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withSentryConfig } = require('@sentry/nextjs');
 
-const nextConfig = {
+const sentryWebpackPluginOptions = {
+    silent: true,
+    hideSourceMaps: true,
+};
+
+const nextConfig = withPlausibleProxy({
+    subdirectory: 'analytics',
+})({
+    swcMinify: true,
+    reactStrictMode: true,
+    sentry: {
+        hideSourceMaps: true,
+        autoInstrumentServerFunctions: false,
+    },
     i18n: {
-        // These are all the locales you want to support in
-        // your application
         locales: ['en-CA'],
-        // This is the default locale you want to be used when visiting
-        // a non-locale prefixed path e.g. `/hello`
-        defaultLocale: 'en-CA'
+        defaultLocale: 'en-CA',
     },
     async redirects() {
         return [
@@ -34,12 +44,13 @@ const nextConfig = {
                 destination: '/', // Matched parameters can be used in the destination
                 permanent: true,
             },
+            {
+                source: '/policies/:slug*',
+                destination: '/', // Matched parameters can be used in the destination
+                permanent: true,
+            },
         ]
     },
-};
+})
 
-module.exports = withPlugins([
-    withPlausibleProxy({
-        subdirectory: 'analytics'
-    })
-], nextConfig);
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
