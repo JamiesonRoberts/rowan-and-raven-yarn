@@ -10,13 +10,13 @@ export default function Custom404() {
                 <title>404 - page not found</title>
             </Head>
 
-            <div className={'layout'}>
+            <main className={'layout'}>
                 <Logo alt="Rowan & Raven Yarn" className={'logo'}/>
                 <div>
                     <h1 className={'title'}>404 - page not found</h1>
                     <Link href={'/'}>Return back to the main page</Link>
                 </div>
-            </div>
+            </main>
         </>
     )
 }
