@@ -33,13 +33,13 @@ const CustomErrorComponent = props => {
                 <title>{props.statusCode} - an error occurred</title>
             </Head>
 
-            <div className={'layout'}>
+            <main className={'layout'}>
                 <Logo alt="Rowan & Raven Yarn" className={'logo'}/>
                 <div>
                     <h1 className={'title'}>{props.statusCode} - an error occurred</h1>
                     <Link href={'/'}>Return back to the main page</Link>
                 </div>
-            </div>
+            </main>
         </>
     )
 };
