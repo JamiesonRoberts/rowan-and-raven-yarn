@@ -1,12 +1,9 @@
-import App from 'next/app'
 import PlausibleProvider from 'next-plausible'
 import {Raleway, Roboto} from '@next/font/google'
 
 import '/styles/styles.css'
-import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const robotoFont = Roboto({
-    variable: '--primary-font',
     subsets: ['latin'],
     weight: '400',
     fallback: ['Helvetica Neue', 'Helvetica', 'sans-serif'],
@@ -14,25 +11,25 @@ const robotoFont = Roboto({
 })
 
 const ralewayFont = Raleway({
-    variable: '--heading-font',
     subsets: ['latin'],
-    weight: '700',
     fallback: ['Helvetica Neue', 'Helvetica', 'sans-serif'],
     display: 'swap'
 });
 
 
-class MyApp extends App {
-    render() {
-        const {Component, pageProps} = this.props
-        return (
-            <PlausibleProvider domain="rowanandravenyarn.ca" trackOutboundLinks={true}>
-                <main className={`${robotoFont.variable} ${ralewayFont.variable}`}>
-                    <Component {...pageProps} />
-                </main>
-            </PlausibleProvider>
-        )
-    }
+const App = ({Component, pageProps}) => {
+    console.log(ralewayFont);
+    return (
+        <PlausibleProvider domain="rowanandravenyarn.ca" trackOutboundLinks={true}>
+            <style jsx global>{`
+              :root {
+                --primary-font: ${robotoFont.style.fontFamily};
+                --heading-font: ${ralewayFont.style.fontFamily};
+              }
+            `}</style>
+            <Component {...pageProps} />
+        </PlausibleProvider>
+    )
 }
 
-export default MyApp
+export default App
