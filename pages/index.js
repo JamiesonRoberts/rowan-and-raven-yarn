@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 import Logo from '@/components/Logo'
 import styles from '@/styles/Index.module.css'
@@ -67,9 +68,9 @@ const Index = () => (
                 </p>
                 <p>~Nadia, founder and owner of Rowan & Raven Yarn</p>
                 <div className={styles.linkList}>
-                    <a
+                    <Link
                         href='https://www.instagram.com/rowanandravenyarn/'
-                        rel='noopener'
+                        rel='noreferrer noopener'
                         target='_blank'
                     >
                         <svg
@@ -86,10 +87,10 @@ const Index = () => (
                         <span className={styles.invisible}>
                             Visit Rowan & Raven Yarn on Instagram
                         </span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href='https://www.facebook.com/rowanandravenyarn'
-                        rel='noopener'
+                        rel='noreferrer noopener'
                         target='_blank'
                     >
                         <svg
@@ -106,10 +107,10 @@ const Index = () => (
                         <span className={styles.invisible}>
                             Visit Rowan & Raven Yarn on Facebook
                         </span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href='https://www.ravelry.com/people/Rustierose'
-                        rel='noopener'
+                        rel='noreferrer noopener'
                         target='_blank'
                     >
                         <svg
@@ -126,10 +127,10 @@ const Index = () => (
                         <span className={styles.invisible}>
                             Visit Rowan & Raven Yarn on Ravelry
                         </span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href='https://linktr.ee/Rowanandravenyarn'
-                        rel='noopener'
+                        rel='noreferrer noopener'
                         target='_blank'
                     >
                         <svg
@@ -146,7 +147,7 @@ const Index = () => (
                         <span className={styles.invisible}>
                             Visit Rowan and Raven Yarn on Linktr.ee
                         </span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </main>
