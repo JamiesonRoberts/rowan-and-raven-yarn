@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import PlausibleProvider from 'next-plausible'
-import { Raleway, Roboto } from '@next/font/google'
+import { Raleway, Roboto } from 'next/font/google'
 
 import '@/styles/styles.css'
 
