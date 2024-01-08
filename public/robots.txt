@@ -1,3 +1,0 @@
-Sitemap: https://rowanandravenyarn.ca/sitemap.xml
-User-agent:*
-Disallow:
