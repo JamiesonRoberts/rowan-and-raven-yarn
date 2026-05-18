@@ -54,3 +54,16 @@ a:hover,
 a:focus {
   color: #9b6496;
 }
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100dvh;
+  text-align: center;
+  padding: 2rem;
+}
